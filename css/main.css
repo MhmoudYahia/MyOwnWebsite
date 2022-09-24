@@ -1,5 +1,85 @@
 * {
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
-  /* font-family: 'Clicker Script', cursive;; */
+}
+body {
+  background-color: #000;
+}
+:root {
+  --main-color: #ff8a00;
+}
+aside {
+  position: fixed;
+  width: 300px;
+  top: 0;
+  left: 0;
+  background-color: #28292beb;
+  bottom: 0;
+  text-align: center;
+}
+aside .logo {
+  height: 35%;
+}
+aside span {
+  font-family: "Clicker Script", cursive;
+  color: #fff;
+  display: inline-block;
+  margin-top: 60px;
+  font-size: 2em;
+  font-weight: bold;
+  position: relative;
+}
+aside span::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-top: 5px solid var(--main-color);
+  border-right: 5px solid var(--main-color);
+  position: absolute;
+  top: -12px;
+}
+aside span::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-bottom: 5px solid var(--main-color);
+  border-left: 5px solid var(--main-color);
+  position: absolute;
+  top: 25px;
+  left: -25px;
+}
+aside ul {
+  padding-left: 0px;
+}
+aside ul li {
+  list-style: none;
+  padding: 15px;
+  display: inline-block;
+  background-color: #252525;
+  width: 150px;
+  transition: 0.3s;
+  margin: 10px;
+  box-shadow: 0 0 10px 5px #141414;
+  position: relative;
+  left: 0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+aside ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+aside ul li i {
+  color: #fff;
+  margin-right: 8px;
+}
+aside ul li:hover a,
+aside ul li:hover i {
+  color: var(--main-color);
+}
+aside ul li:hover {
+  left: 8px;
+  background-color: #323232;
 }
