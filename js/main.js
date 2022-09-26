@@ -64,6 +64,12 @@ for (const span of colorSpans) {
 //select icon mode
 const iconMode = document.querySelector(".settings .fa-sun");
 
+//select icon toggle bars
+const iconToggleBars=document.querySelector(".fa-bars");
+
+// select aside bar
+const asideSection=document.querySelector("aside");
+
 //convert to shin mode on click
 iconMode.addEventListener("click", () => {
   //1
@@ -77,7 +83,7 @@ iconMode.addEventListener("click", () => {
   }
 
   //2
-  document.querySelector("aside").classList.toggle("lightmode");
+  asideSection.classList.toggle("lightmode");
 
   //3
   document.querySelector(".home-page").classList.toggle("lightmode");
@@ -87,6 +93,10 @@ iconMode.addEventListener("click", () => {
 
   //5
   document.querySelector(".about-page").classList.toggle("lightmode");
+
+  //6
+  iconToggleBars.classList.toggle('lightmode');
+  
 });
 
 // fetch the mode from local storage
@@ -138,7 +148,14 @@ window.onload = function () {
 };
 
 
-// percentage skill box
+// aboutme responsive
+
+//toggle  side bar on clicking the icon bars
+iconToggleBars.addEventListener('click',()=>{
+
+    //add class active
+    asideSection.classList.toggle('active');
+})
 
 //postponed
 // // change between pages
