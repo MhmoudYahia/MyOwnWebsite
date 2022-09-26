@@ -84,6 +84,9 @@ iconMode.addEventListener("click", () => {
 
   //4
   document.querySelector(".settings").classList.toggle("lightmode");
+
+  //5
+  document.querySelector(".about-page").classList.toggle("lightmode");
 });
 
 // fetch the mode from local storage
@@ -93,10 +96,50 @@ if (isShinedFromLocalStorage) {
     iconMode.click();
   }
 }
+// <<========end settings bar========>>
 
-/*
-<<========end settings bar========>>
-*/
+// on&off skill bar on scroll
+
+//select spans & all section
+const skillSpans = document.querySelectorAll(".skills-lang .skill span.overlay");
+const skillsSec = document.querySelector(".about-page .skills-lang");
+
+//event scroll
+
+window.onscroll = function () {
+  //get All Y offset( the distanse that has been scrolled Up of the current page)
+  const pageYoffset = window.pageYOffset;
+
+  //offset Y for skill div (distanse from the top to the element)
+  const offsetTop = skillsSec.offsetTop;
+
+  //section height
+  const secH = skillsSec.offsetHeight;
+
+  //window height
+  const windowH = window.innerHeight;
+
+  if (pageYoffset > offsetTop + secH) {
+    skillSpans.forEach((skill) => {
+      skill.style.width = "0";
+    });
+  } else {
+    skillSpans.forEach((skill) => {
+      skill.style.width = skill.dataset.progress;
+    });
+  }
+};
+
+// onreload event
+window.onload = function () {
+  skillSpans.forEach((skill) => {
+    skill.style.width = skill.dataset.progress;
+  });
+};
+
+
+// percentage skill box
+
 //postponed
 // // change between pages
 // const iconForPage = document.querySelectorAll("aside ul li");

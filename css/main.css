@@ -21,6 +21,7 @@ aside {
   background-color: #28292beb;
   bottom: 0;
   text-align: center;
+  border-right: 3px solid var(--main-color);
 }
 aside.lightmode {
   background-color: #fff;
@@ -188,6 +189,7 @@ aside.lightmode ul li:hover {
   color: var(--main-color);
   cursor: pointer;
   caret-color: transparent;
+  box-shadow: 0 0 5px 1px #fff;
 }
 .settings .fa-gear:hover,
 .settings .fa-sun:hover {
@@ -196,6 +198,7 @@ aside.lightmode ul li:hover {
 .settings.lightmode .fa-gear,
 .settings.lightmode .fa-sun {
   background-color: #fff;
+  box-shadow: 0 0 5px 1px #000;
 }
 .settings .fa-sun {
   top: calc(100% - 40px - 10px);
@@ -205,7 +208,7 @@ aside.lightmode ul li:hover {
 .home-page {
   position: relative;
   left: 100%;
-  display: flex;
+  display: none;
   width: calc(100% - 300px);
   padding: var(--section-padding);
   justify-content: space-between;
@@ -213,6 +216,7 @@ aside.lightmode ul li:hover {
 }
 .home-page.active {
   left: 300px;
+  display: flex;
 }
 .home-page .homeContent {
   color: #fff;
@@ -275,5 +279,181 @@ aside.lightmode ul li:hover {
 }
 /* end homepge */
 /* start about page */
+.about-page {
+  position: relative;
+  width: calc(100% - 300px);
+  padding: var(--section-padding);
+  left: 300px;
+}
+.about-page h1 {
+  color: #fff;
+  position: relative;
+}
+.about-page.lightmode h1 {
+  color: #000;
+}
+.about-page h1::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background-color: var(--main-color);
+  bottom: -10px;
+}
+.about-page h1::after {
+  content: "";
+  position: absolute;
+  width: 38px;
+  height: 4px;
+  background-color: var(--main-color);
+  bottom: -17px;
+  left: 0;
+}
+.about-page h1 + h3 span {
+  color: var(--main-color);
+}
+.about-page h1 + h3 {
+  color: #fff;
+  margin-top: 43px;
+}
+.about-page.lightmode h1 + h3 {
+  color: rgb(0, 0, 0);
+}
+.about-page p.text-about {
+  color: #b5b5b5;
+  line-height: 1.8;
+}
+.about-page.lightmode p.text-about {
+  color: #000;
+}
+.about-page .about-data {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  margin: 60px 0;
+}
+.about-page.lightmode .about-data {
+  color: rgb(0, 0, 0);
+}
+.about-data .data {
+  flex-basis: 55%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.about-data .skills-lang {
+  flex-basis: 40%;
+}
+.about-data .data div {
+  flex-basis: 50%;
+}
+.about-data .data div span {
+  color: rgb(120 120 120);
+}
+.about-data .data button {
+  outline: 0;
+  border: 0;
+  border-radius: 24px;
+  padding: 3px 27px;
+  margin: 15px 26px 0px;
+  font-weight: bold;
+  box-shadow: 0 0 10px 1px #fff;
+  cursor: pointer;
+  background-color: var(--main-color);
+  color: #fff;
+  height: 40px;
+}
 
+.about-page.lightmode .about-data .data button {
+  box-shadow: 0 0 10px 1px #000;;
+}
+.about-page .about-data .data button:hover {
+  box-shadow: 0 0 10px 2px var(--main-color);
+}
+.about-page .skills-lang .skill {
+  margin-bottom: 30px;
+}
+.about-page .skills-lang .skill h4 {
+  margin: 0px 0px 5px;
+}
+.about-page .skills-lang .skill div:nth-child(2) {
+  width: 100%;
+  background-color: #c8c8c8;
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.about-page .skills-lang .skill span.overlay {
+  position: absolute;
+  height: 100%;
+  transition: 0.5s;
+  background-color: var(--main-color);
+}
+.about-page .skills-lang .skill span.percentage {
+  color: var(--main-color);
+}
+.about-page .skills-lang .skill .data-skill {
+  display: flex;
+  justify-content: space-between;
+}
+.about-page .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.about-page .container .col {
+  flex-basis: 47%;
+}
+.about-page .container .col h2 {
+  color: #fff;
+}
+.about-page.lightmode .container .col h2 {
+  color: #000;
+}
+.about-page .container .data-Edu-Exp {
+  background-color: #28292beb;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px 1px var(--main-color);
+  color: white;
+  position: relative;
+  margin-top: 40px;
+}
+.about-page .container .data-Edu-Exp::before {
+  content: "";
+  height: calc(100% - 75px);
+  position: absolute;
+  width: 3px;
+  background-color: var(--main-color);
+}
+.about-page.lightmode .container .data-Edu-Exp {
+  background-color: #fff;
+  box-shadow: 0 0 12px 1px var(--main-color);
+  color: rgb(0, 0, 0);
+}
+.about-page .container .box {
+  margin-left: 30px;
+  position: relative;
+  margin-bottom: 50px;
+}
+.about-page .container .box::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 4px solid var(--main-color);
+  position: absolute;
+  left: -36.5px;
+  background-color: white;
+}
+.about-page .container .box p {
+  line-height: 1.7;
+  color: rgb(120 120 120);
+}
+.about-page .container .box i {
+  margin-right: 10px;
+}
+.about-page .container .box h4 {
+  font-weight: bold;
+}
 /* end about page */
