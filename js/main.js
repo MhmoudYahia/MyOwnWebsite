@@ -65,10 +65,10 @@ for (const span of colorSpans) {
 const iconMode = document.querySelector(".settings .fa-sun");
 
 //select icon toggle bars
-const iconToggleBars=document.querySelector(".fa-bars");
+const iconToggleBars = document.querySelector(".fa-bars");
 
 // select aside bar
-const asideSection=document.querySelector("aside");
+const asideSection = document.querySelector("aside");
 
 //convert to shin mode on click
 iconMode.addEventListener("click", () => {
@@ -95,8 +95,15 @@ iconMode.addEventListener("click", () => {
   document.querySelector(".about-page").classList.toggle("lightmode");
 
   //6
-  iconToggleBars.classList.toggle('lightmode');
-  
+  iconToggleBars.classList.toggle("lightmode");
+
+  //7
+  document.querySelectorAll("h1.h1-style").forEach((ele) => {
+    ele.classList.toggle("lightmode");
+  });
+
+  //8 
+  document.querySelector(".services-page").classList.toggle('lightmode');
 });
 
 // fetch the mode from local storage
@@ -111,7 +118,9 @@ if (isShinedFromLocalStorage) {
 // on&off skill bar on scroll
 
 //select spans & all section
-const skillSpans = document.querySelectorAll(".skills-lang .skill span.overlay");
+const skillSpans = document.querySelectorAll(
+  ".skills-lang .skill span.overlay"
+);
 const skillsSec = document.querySelector(".about-page .skills-lang");
 
 //event scroll
@@ -147,15 +156,13 @@ window.onload = function () {
   });
 };
 
-
 // aboutme responsive
 
 //toggle  side bar on clicking the icon bars
-iconToggleBars.addEventListener('click',()=>{
-
-    //add class active
-    asideSection.classList.toggle('active');
-})
+iconToggleBars.addEventListener("click", () => {
+  //add class active
+  asideSection.classList.toggle("active");
+});
 
 //postponed
 // // change between pages
