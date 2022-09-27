@@ -102,8 +102,11 @@ iconMode.addEventListener("click", () => {
     ele.classList.toggle("lightmode");
   });
 
-  //8 
-  document.querySelector(".services-page").classList.toggle('lightmode');
+  //8
+  document.querySelector(".services-page").classList.toggle("lightmode");
+
+  //9
+  document.querySelector(".portfolio").classList.toggle("lightmode");
 });
 
 // fetch the mode from local storage
@@ -164,21 +167,53 @@ iconToggleBars.addEventListener("click", () => {
   asideSection.classList.toggle("active");
 });
 
-//postponed
-// // change between pages
-// const iconForPage = document.querySelectorAll("aside ul li");
+// change between pages
 
-// iconForPage.forEach((icon) => {
+//select spans li
+const iconForPage = document.querySelectorAll("aside ul li");
 
-//   //set the selected page as main page
-//   icon.addEventListener("click", () => {
+//select main sections in the website
+const mainSections = document.querySelectorAll("body > div");
 
-//     //remove active from previous page and set new
-//     iconForPage.forEach((ele) => {
-//       if (ele.classList.contains("active")) {
-//         ele.classList.remove("active");
-//       }
-//     });
-//     icon.classList.add('active');
-//   });
-// });
+//toggle the selected page
+iconForPage.forEach((icon, index) => {
+  //set the selected page as main page
+  icon.addEventListener("click", () => {
+    //remove active from previous page and set new
+    mainSections.forEach((span, index) => {
+      if (span.classList.contains("active")) {
+        span.classList.remove("active");
+      }
+      if (span.classList.contains("scroll-x")) {
+        span.classList.remove("scroll-x");
+      }
+    });
+    setSectionAsMainSection(index);
+
+    // set the current section to localstorage
+    localStorage.setItem("section-index", index);
+  });
+});
+
+// fetch the currrnt page from local storage if found
+const currentPageLocalStorageIndex = localStorage.getItem("section-index");
+
+// if found
+if (currentPageLocalStorageIndex) {
+  // set last page opened as main page
+  setSectionAsMainSection(Number(currentPageLocalStorageIndex));
+} else {
+  // set home page opened as main page
+  setSectionAsMainSection(0);
+}
+
+function setSectionAsMainSection(index) {
+  //set class active to section
+  mainSections[index].classList.add("active");
+
+  // scroll the page on x when clicking, after all loading of css (async)
+  // the bug of display is fixed (الحمد لله)
+  setTimeout(() => {
+    mainSections[index].classList.add("scroll-x");
+  }, 0);
+}

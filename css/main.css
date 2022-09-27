@@ -3,15 +3,44 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #000;
+  background-color: #28292bdb;
+  overflow-x: hidden;
 }
 body.lightmode {
-  background-color: #dbf1fd;
+  background-color: rgb(234, 234, 234);
 }
 :root {
   --main-color: #ff8a00;
   --section-padding: 45px;
 }
+/* start general style section */
+.generalStyleSec {
+  position: absolute;
+  left: 100%;
+  width: calc(100% - 300px);
+  padding: var(--section-padding);
+  transition: 0.5s;
+  display: none;
+  background-color: #000;
+  min-height: 100vh;
+  border-left: 3px solid var(--main-color);
+}
+.generalStyleSec.lightmode {
+  background-color: #dbf1fd;
+}
+.generalStyleSec.active {
+  display: block;
+}
+.generalStyleSec.scroll-x {
+  left: 300px;
+}
+@media (max-width: 768px) {
+  .generalStyleSec.active {
+    width: 100%;
+    left: 0;
+  }
+}
+/* end general style section */
 /**start icon bar*/
 .fa-bars {
   position: fixed;
@@ -78,7 +107,7 @@ aside {
   background-color: #28292beb;
   bottom: 0;
   text-align: center;
-  border-right: 3px solid var(--main-color);
+  border-right: 1px solid var(--main-color);
   transition: 0.3s;
   z-index: 9;
 }
@@ -180,9 +209,6 @@ aside.lightmode ul li:hover {
   aside {
     left: -300px;
   }
-  /* aside.active {
-    left: -300px;
-  } */
 }
 /* end side bar */
 /* start settings */
@@ -282,16 +308,10 @@ aside.lightmode ul li:hover {
 /* end settings */
 /* start homepage */
 .home-page {
-  position: relative;
-  left: 100%;
-  display: none;
-  width: calc(100% - 300px);
-  padding: var(--section-padding);
+  padding-top: 130px;
   justify-content: space-between;
-  margin-top: 130px;
 }
 .home-page.active {
-  left: 300px;
   display: flex;
 }
 
@@ -361,10 +381,6 @@ aside.lightmode ul li:hover {
   margin: 0 40px;
 }
 @media (max-width: 768px) {
-  .home-page.active {
-    width: 100%;
-    left: 0;
-  }
   .home-page .homeImg img {
     width: 178px;
     height: 152px;
@@ -385,17 +401,6 @@ aside.lightmode ul li:hover {
 }
 /* end homepge */
 /* start about page */
-.about-page {
-  position: relative;
-  width: calc(100% - 300px);
-  padding: var(--section-padding);
-  left: 100%;
-  display: none;
-}
-.about-page.active {
-  left: 300px;
-  display: block;
-}
 .about-page h1 + h3 span {
   color: var(--main-color);
 }
@@ -565,25 +570,14 @@ aside.lightmode ul li:hover {
 .about-page .container .box h4 {
   font-weight: bold;
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .about-page.active {
     width: 100%;
     left: 0;
   }
-}
+} */
 /* end about page */
 /* <!-- start services page --> */
-.services-page {
-  position: relative;
-  width: calc(100% - 300px);
-  padding: var(--section-padding);
-  left: 100%;
-  display: none;
-}
-.services-page.active {
-  left: 300px;
-  display: block;
-}
 .services-page .services-content {
   color: #fff;
   display: flex;
@@ -611,6 +605,19 @@ aside.lightmode ul li:hover {
 .services-page .services-content .box i {
   color: var(--main-color);
   font-size: 40px;
+  transition: 0.3s;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+.services-page .services-content .box i:hover {
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .services-page .services-content .box p {
   color: #b5b5b5;
@@ -631,3 +638,5 @@ aside.lightmode ul li:hover {
   }
 }
 /* <!-- end services page --> */
+/* <!-- start porfolio section --> */
+/* <!-- end porfolio section --> */
