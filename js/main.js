@@ -222,3 +222,56 @@ function setSectionAsMainSection(index) {
     mainSections[index].classList.add("scroll-x");
   }, 0);
 }
+
+//<<======== portfolio popup ================>>
+
+//select popup-box elements
+const popupBox = document.querySelector(".portfolio .popup-box");
+const popupOverlay = document.querySelector(".portfolio .popup-box .overlay");
+const projectName = document.querySelector(
+  ".portfolio .popup-box .popup-content h2"
+);
+const projectText = document.querySelector(
+  ".portfolio .popup-box .popup-content p"
+);
+const projectRepoLnk = document.querySelector(
+  ".portfolio .popup-box .popup-content a.repo"
+);
+const projectPage = document.querySelector(
+  ".portfolio .popup-box .popup-content a.page"
+);
+const xicon = document.querySelector(".portfolio .popup-box .popup-content i");
+
+//select projects
+const projects = document.querySelectorAll(".portfolio-content .project");
+
+//display popup-box onclicking the img project
+projects.forEach((project) => {
+  //listen click event
+  project.addEventListener("click", () => {
+    //set name
+    projectName.innerHTML = project.dataset.name;
+
+    //set text
+    projectText.innerHTML = project.dataset.text;
+
+    //set repo link
+    projectRepoLnk.setAttribute("href", project.dataset.repo);
+
+    //set page link
+    projectPage.setAttribute("href", project.dataset.page);
+
+    //display popup
+    popupBox.classList.add("active");
+  });
+});
+
+//remove popup on clicking X icon
+xicon.addEventListener("click", () => {
+  popupBox.classList.remove("active");
+});
+
+//remove popup on clicking the overlay
+popupOverlay.addEventListener("click", () => {
+  popupBox.classList.remove("active");
+});

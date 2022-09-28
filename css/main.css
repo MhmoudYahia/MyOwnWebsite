@@ -639,4 +639,164 @@ aside.lightmode ul li:hover {
 }
 /* <!-- end services page --> */
 /* <!-- start porfolio section --> */
+.portfolio-content {
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.portfolio.lightmode .portfolio-content {
+  color: #000;
+}
+.portfolio h2 {
+  margin: 64px 0;
+  text-align: center;
+  color: var(--main-color);
+  margin: 64px 0 20px;
+  font-weight: bold;
+}
+.portfolio > hr {
+  margin-bottom: 20px;
+}
+.portfolio-content .project {
+  flex-basis: 32%;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 3px solid var(--main-color);
+  box-shadow: 0 0 6px 1px var(--main-color);
+}
+
+@media (max-width: 992px) {
+  .portfolio-content .project {
+    flex-basis: 48%;
+  }
+}
+@media (max-width: 576px) {
+  .portfolio-content .project {
+    flex-basis: 98%;
+  }
+}
+.portfolio-content .project img {
+  max-width: 100%;
+  transition: 0.3s;
+  min-height: 100%;
+}
+.portfolio-content .pophover {
+  position: absolute;
+  background-color: var(--main-color);
+  width: 100%;
+  text-align: center;
+  bottom: -75px;
+  transition: 0.3s;
+  z-index: 2;
+  color: #fff;
+}
+.portfolio-content .project:hover .pophover {
+  bottom: 0;
+}
+.portfolio-content .project:hover img {
+  transform: scale(1.1) rotate(3deg);
+}
+.portfolio .popup-box {
+  display: none;
+}
+.portfolio .popup-box.active {
+  display: block;
+}
+.portfolio .popup-box .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000a7;
+  z-index: 5;
+}
+.portfolio .popup-box .popup-content i {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+  right: 10px;
+  top: 10px;
+  color: #fff;
+  cursor: pointer;
+  caret-color: transparent;
+}
+.portfolio .popup-box .popup-content i:hover {
+  box-shadow: 0 0 6px 4px red;
+}
+.portfolio .popup-box .popup-content {
+  position: fixed;
+  color: #fff;
+  z-index: 10;
+  width: 450px;
+  left: calc(50% + 150px);
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  padding: 20px;
+  border-radius: 15px;
+  border: 4px solid var(--main-color);
+  background-color: #28292b;
+}
+.portfolio .popup-box .popup-content h2 {
+  margin: 0 0 20px;
+}
+
+.portfolio.lightmode .popup-box .popup-content {
+  background-color: #fff;
+  color: #000;
+}
+
+.portfolio .popup-box .popup-content hr {
+  background-color: var(--main-color);
+}
+.portfolio .popup-box .popup-content p {
+  line-height: 1.5;
+}
+.portfolio .popup-box .popup-content a {
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+.portfolio .popup-box .popup-content div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.portfolio .popup-box .popup-content div span {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--main-color);
+  border: 3px solid #888888;
+}
+.portfolio .popup-box .popup-content div span:hover {
+  box-shadow: 0 0 12px 1px var(--main-color);
+}
+@media (max-width: 768px) {
+  .portfolio .popup-box .popup-content {
+    left: 50%;
+  }
+}
+@media (max-width: 576px) {
+  .portfolio .popup-box .popup-content {
+    max-width: 350px;
+  }
+}
+@media (max-width: 300px) {
+  .portfolio .popup-box .popup-content {
+    max-width: 260px;
+  }
+  .portfolio .popup-box .popup-content h3 {
+    text-align: start;
+  }
+}
 /* <!-- end porfolio section --> */
