@@ -179,19 +179,24 @@ const mainSections = document.querySelectorAll("body > div");
 iconForPage.forEach((icon, index) => {
   //set the selected page as main page
   icon.addEventListener("click", () => {
-    //remove active from previous page and set new
-    mainSections.forEach((span, index) => {
-      if (span.classList.contains("active")) {
-        span.classList.remove("active");
-      }
-      if (span.classList.contains("scroll-x")) {
-        span.classList.remove("scroll-x");
-      }
-    });
-    setSectionAsMainSection(index);
+    //if the section is allready main section do none
+    if (!mainSections[index].classList.contains("active")) {
+      //remove active from previous page and set new
+      mainSections.forEach((sec) => {
+        if (sec.classList.contains("active")) {
+          setTimeout(() => {
+            sec.classList.remove("active");
+          }, 200);
+        }
+        if (sec.classList.contains("scroll-x")) {
+          sec.classList.remove("scroll-x");
+        }
+      });
+      setSectionAsMainSection(index);
 
-    // set the current section to localstorage
-    localStorage.setItem("section-index", index);
+      // set the current section to localstorage
+      localStorage.setItem("section-index", index);
+    }
   });
 });
 
