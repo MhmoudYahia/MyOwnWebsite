@@ -25,6 +25,11 @@ body.lightmode {
   min-height: 100vh;
   border-left: 3px solid var(--main-color);
 }
+@media (max-width: 576px) {
+  .generalStyleSec {
+    padding: 20px;
+  }
+}
 .generalStyleSec.lightmode {
   background-color: #dbf1fd;
 }
@@ -45,7 +50,7 @@ body.lightmode {
 .fa-bars {
   position: fixed;
   top: 10px;
-  left: 10px;
+  left: -25px;
   z-index: 10;
   font-size: xx-large;
   padding: 8px;
@@ -57,10 +62,12 @@ body.lightmode {
   color: var(--main-color);
   box-shadow: 0 0 15px 5px var(--main-color);
   caret-color: transparent;
+  transition: 0.3s;
 }
 .fa-bars:hover {
   background-color: var(--main-color);
   color: #000;
+  left: 10px;
 }
 .fa-bars.lightmode {
   background-color: rgba(255, 255, 255, 0.874);
@@ -800,3 +807,91 @@ aside.lightmode ul li:hover {
   }
 }
 /* <!-- end porfolio section --> */
+/* <!-- start contact section --> */
+.contactme .contact-content {
+  color: #fff;
+}
+.contactme.lightmode .contact-content {
+  color: #000;
+}
+.contactme h2 {
+  text-align: center;
+  color: var(--main-color);
+  font-weight: bold;
+  margin-top: 60px;
+}
+.contactme h4 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.contactme .contact-content .contacts-media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contactme .contacts-media .box-contact {
+  text-align: center;
+  width: 200px;
+  margin-bottom: 50px;
+}
+.contactme .contacts-media .box-contact i {
+  color: var(--main-color);
+  font-size: x-large;
+  font-weight: bold;
+}
+.contactme .contacts-media .box-contact p {
+  letter-spacing: 1.3px;
+}
+.contactme .contact-content form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contactme .contact-content form input,
+.contactme .contact-content form textarea {
+  margin: 5px;
+  padding: 8px;
+  border-radius: 17px;
+  outline: 0;
+  border: 2px solid var(--main-color);
+  background-color: #28292bdb;
+  caret-color: var(--main-color);
+}
+.contactme.lightmode .contact-content form input,
+.contactme.lightmode .contact-content form textarea {
+  background-color: #fff;
+}
+.contactme .contact-content form input:hover,
+.contactme .contact-content form textarea:hover {
+  box-shadow: 0 0 5px 2px var(--main-color);
+}
+.contactme .contact-content form input:nth-child(1) {
+  width: calc(50% - 10px);
+}
+.contactme .contact-content form input:nth-child(2) {
+  width: calc(50% - 10px);
+}
+@media (max-width: 768px) {
+  .contactme .contact-content form input:nth-child(1) {
+    width: calc(100% - 10px);
+  }
+  .contactme .contact-content form input:nth-child(2) {
+    width: calc(100% - 10px);
+  }
+}
+.contactme .contact-content form input:nth-child(3) {
+  display: block;
+  width: calc(100% - 10px);
+}
+.contactme .contact-content form textarea {
+  width: calc(100% - 10px);
+  height: 120px;
+}
+.contactme .contact-content form input[type="submit"] {
+  margin-top: 20px;
+  color: #fff;
+  background-color: var(--main-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+/* <!-- end contact section -->  */

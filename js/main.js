@@ -85,14 +85,8 @@ iconMode.addEventListener("click", () => {
   //2
   asideSection.classList.toggle("lightmode");
 
-  //3
-  document.querySelector(".home-page").classList.toggle("lightmode");
-
   //4
   document.querySelector(".settings").classList.toggle("lightmode");
-
-  //5
-  document.querySelector(".about-page").classList.toggle("lightmode");
 
   //6
   iconToggleBars.classList.toggle("lightmode");
@@ -102,11 +96,10 @@ iconMode.addEventListener("click", () => {
     ele.classList.toggle("lightmode");
   });
 
-  //8
-  document.querySelector(".services-page").classList.toggle("lightmode");
-
-  //9
-  document.querySelector(".portfolio").classList.toggle("lightmode");
+  //set light mode to the main sections
+  document.querySelectorAll(".generalStyleSec").forEach((section) => {
+    section.classList.toggle("lightmode");
+  });
 });
 
 // fetch the mode from local storage
@@ -187,6 +180,13 @@ iconForPage.forEach((icon, index) => {
           setTimeout(() => {
             sec.classList.remove("active");
           }, 200);
+
+          //remove skills overlay
+          if (sec.classList.contains("about-page")) {
+            skillSpans.forEach((skill) => {
+              skill.style.width = "0";
+            });
+          }
         }
         if (sec.classList.contains("scroll-x")) {
           sec.classList.remove("scroll-x");
@@ -215,6 +215,15 @@ if (currentPageLocalStorageIndex) {
 function setSectionAsMainSection(index) {
   //set class active to section
   mainSections[index].classList.add("active");
+
+  //set skills overlay
+  setTimeout(() => {
+    if (mainSections[index].classList.contains("about-page")) {
+      skillSpans.forEach((skill) => {
+        skill.style.width = skill.dataset.progress;
+      });
+    }
+  }, 400);
 
   // scroll the page on x when clicking, after all loading of css (async)
   // the bug of display is fixed (الحمد لله)
