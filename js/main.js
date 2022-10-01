@@ -163,13 +163,13 @@ iconToggleBars.addEventListener("click", () => {
 // change between pages
 
 //select spans li
-const iconForPage = document.querySelectorAll("aside ul li");
+const iconsForPages = document.querySelectorAll("aside ul li");
 
 //select main sections in the website
 const mainSections = document.querySelectorAll("body > div");
 
 //toggle the selected page
-iconForPage.forEach((icon, index) => {
+iconsForPages.forEach((icon, index) => {
   //set the selected page as main page
   icon.addEventListener("click", () => {
     //if the section is allready main section do none
@@ -284,3 +284,27 @@ xicon.addEventListener("click", () => {
 popupOverlay.addEventListener("click", () => {
   popupBox.classList.remove("active");
 });
+
+/*
+<<=========typing in home screen=======
+ */
+
+const typed = new Typed(".typing", {
+  strings: ["an Engineer", "a Web Developer", "a Programmer"],
+  typeSpeed: 100,
+  backSpeed: 60,
+  loop: true,
+});
+
+
+/*
+<<======= more about me button=========
+*/
+
+//select the button
+const aboutMeBtn = document.querySelector(".home-page .homeContent span.btn");
+
+//go to about page on clicking
+aboutMeBtn.addEventListener('click',()=>{
+  iconsForPages[1].click();
+})
