@@ -179,6 +179,7 @@ aside ul li {
   border-radius: 5px;
   text-align: initial;
   padding-left: 8%;
+  caret-color: transparent;
 }
 aside.lightmode ul li {
   background-color: #f9f6ff;
@@ -211,6 +212,20 @@ aside ul li:hover {
 aside.lightmode ul li:hover {
   background-color: #e5e5e5;
 }
+
+aside ul li.active a,
+aside ul li.active i {
+  color: var(--main-color);
+}
+aside ul li.active {
+  left: 8px;
+  background-color: #323232;
+  box-shadow: 0 0 10px 1px var(--main-color);
+}
+aside.lightmode ul li.active {
+  background-color: #e5e5e5;
+}
+
 @media (max-width: 768px) {
   aside {
     left: -300px;

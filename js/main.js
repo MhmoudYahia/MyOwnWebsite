@@ -197,6 +197,12 @@ iconsForPages.forEach((icon, index) => {
       // set the current section to localstorage
       localStorage.setItem("section-index", index);
     }
+    iconsForPages.forEach((icon) => {
+      if (icon.classList.contains("active")) {
+        icon.classList.remove("active");
+      }
+    });
+    iconsForPages[index].classList.add("active");
   });
 });
 
@@ -215,7 +221,7 @@ if (currentPageLocalStorageIndex) {
 function setSectionAsMainSection(index) {
   //set class active to section
   mainSections[index].classList.add("active");
-
+  iconsForPages[index].classList.add("active");
   //set skills overlay
   setTimeout(() => {
     if (mainSections[index].classList.contains("about-page")) {
@@ -296,7 +302,6 @@ const typed = new Typed(".typing", {
   loop: true,
 });
 
-
 /*
 <<======= more about me button=========
 */
@@ -305,6 +310,6 @@ const typed = new Typed(".typing", {
 const aboutMeBtn = document.querySelector(".home-page .homeContent span.btn");
 
 //go to about page on clicking
-aboutMeBtn.addEventListener('click',()=>{
+aboutMeBtn.addEventListener("click", () => {
   iconsForPages[1].click();
-})
+});
