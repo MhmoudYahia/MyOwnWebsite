@@ -315,6 +315,7 @@ footer {
   cursor: pointer;
   caret-color: transparent;
   box-shadow: 0 0 5px 1px #fff;
+  transition: 0.3s;
 }
 
 .settings.lightmode .fa-gear,
@@ -626,6 +627,10 @@ footer {
   margin: 15px 5px;
   border-radius: 7px;
   text-align: center;
+  border: 2px solid var(--main-color);
+  transition: 0.3s;
+}
+.services-page .services-content .box:hover {
   box-shadow: 0 0 10px 1px var(--main-color);
 }
 .services-page.lightmode .services-content .box {
