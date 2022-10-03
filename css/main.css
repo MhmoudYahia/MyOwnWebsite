@@ -580,6 +580,10 @@ footer {
   position: relative;
   margin-bottom: 50px;
 }
+.about-page .container .box p a{
+  text-decoration: none;
+  color: var(--main-color);
+}
 .about-page .container .box::before {
   content: "";
   width: 8px;
@@ -794,7 +798,7 @@ footer {
   background-color: var(--main-color);
 }
 .portfolio .popup-box .popup-content p {
-  line-height: 1.5;
+  line-height: 1.6;
 }
 .portfolio .popup-box .popup-content a {
   font-weight: bold;
