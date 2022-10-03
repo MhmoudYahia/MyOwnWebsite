@@ -152,16 +152,26 @@ window.onload = function () {
   });
 };
 
-// aboutme responsive
+
+
+//select the full section overlay
+const fullOverlay = document.querySelector(".fullOverlay");
 
 //toggle  side bar on clicking the icon bars
 iconToggleBars.addEventListener("click", () => {
   //add class active
   asideSection.classList.toggle("active");
+
+  // disblay the overlay
+  fullOverlay.classList.toggle("active");
 });
 
-// change between pages
+// remove the side bar on clicking any where outside it
+fullOverlay.addEventListener('click',()=>{
+  iconToggleBars.click();
+})
 
+// change between pages
 //select spans li
 const iconsForPages = document.querySelectorAll("aside ul li");
 

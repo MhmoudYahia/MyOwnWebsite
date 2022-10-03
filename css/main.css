@@ -27,7 +27,7 @@ body.lightmode {
 }
 @media (max-width: 576px) {
   .generalStyleSec {
-    padding: 20px;
+    padding: 40px 20px;
   }
 }
 .generalStyleSec.lightmode {
@@ -130,6 +130,19 @@ aside.active {
 aside.lightmode.active {
   background-color: #fff;
 }
+.fullOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #2424249e;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none;
+}
+.fullOverlay.active {
+  display: block;
+}
 aside span {
   font-family: "Clicker Script", cursive;
   color: #fff;
@@ -229,6 +242,7 @@ aside.lightmode ul li.active {
 @media (max-width: 768px) {
   aside {
     left: -300px;
+    width: 260px;
   }
 }
 footer {
@@ -341,7 +355,11 @@ footer {
 .home-page.active {
   display: flex;
 }
-
+@media (max-width: 768px) {
+  .home-page.active {
+    justify-content: flex-start;
+  }
+}
 .home-page .homeContent {
   color: #fff;
 }
@@ -426,7 +444,7 @@ footer {
   }
   .home-page .homeImg {
     order: 1;
-    margin: 0 0 50px 0;
+    margin: 0 0 100px 0;
   }
 }
 /* end homepge */
@@ -580,7 +598,7 @@ footer {
   position: relative;
   margin-bottom: 50px;
 }
-.about-page .container .box p a{
+.about-page .container .box p a {
   text-decoration: none;
   color: var(--main-color);
 }
