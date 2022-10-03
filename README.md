@@ -1,5 +1,5 @@
-# MyOwnWebsite
-## a personal website template consists of five sections:
+# Personal Template Website
+## The template consists of five sections:
 - Home
 - About
 - Services 
