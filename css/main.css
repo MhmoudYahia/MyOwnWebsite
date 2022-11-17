@@ -467,6 +467,10 @@ footer {
 .about-page.lightmode p.text-about {
   color: #000;
 }
+.about-page button a{
+  text-decoration: none;
+  color: white;
+}
 .about-page .about-data {
   display: flex;
   justify-content: space-between;
